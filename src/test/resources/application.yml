@@ -1,0 +1,30 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://54.180.67.94:3306/cu_license
+    username: root
+    password: cubox2024!
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: cubox-ti@cubox.ai
+    password: hkcrwgwfwucmjhhi
+  profiles:
+    mail:
+      smtp:
+        auth: true
+        starttls:
+          enable: true
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+
+# Log 설정
