@@ -21,7 +21,6 @@ public class UserController {
 
     @PostMapping("/process_register")
     public String processRegister(UserDto userDto) {
-        System.out.println("Here!!!");
         userService.save(userDto);
         return "login";
     }

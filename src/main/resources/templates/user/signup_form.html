@@ -2,55 +2,35 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>가입</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/styles/user/signup_form.css}" rel="stylesheet" />
+    <title></title>
 </head>
 <body>
-<div>
-    <div>
-        <h1>사용자 등록</h1>
-    </div>
-    <form th:action="@{/process_register}" th:object="${userDto}" method="post">
-        <div>
-            <div>
-                <label>이메일: </label>
-                <div>
-                    <input type="email" th:field="*{email}" required />
-                </div>
-            </div>
 
-            <div>
-                <label>비밀번호: </label>
-                <div>
-                    <input type="password" th:field="*{password}" required minlength="6" maxlength="10"/>
-                </div>
-            </div>
+<div th:class="bg">
+    <div th:class="signup-container">
+        <div th:class="signup-box">
+            <form th:action="@{/process_register}" th:object="${userDto}" method="post">
+                <label for="email"><b>이메일</b></label>
+                <input type="email" id="email" th:field="*{email}" required />
 
-            <div>
-                <label>사용자 이름: </label>
-                <div>
-                    <input type="text" th:field="*{username}" required minlength="2" maxlength="20"/>
-                </div>
-            </div>
+                <label for="password"><b>비밀번호</b></label>
+                <input type="password" id="password" th:field="*{password}" minlength="6" maxlength="10" required />
 
-            <div>
-                <label>부서: </label>
-                <div>
-                    <input type="text" th:field="*{department}" required minlength="2" maxlength="20"/>
-                </div>
-            </div>
+                <label for="username"><b>사용자 이름</b></label>
+                <input type="text" id="username" th:field="*{username}" required />
 
-            <div>
-                <label>직급: </label>
-                <div>
-                    <input type="text" th:field="*{position}" required minlength="2" maxlength="20"/>
-                </div>
-            </div>
+                <label for="department"><b>부서</b></label>
+                <input type="text" id="department" th:field="*{department}" required />
 
-            <div>
-                <button type="submit">가입</button>
-            </div>
+                <label for="position"><b>직급</b></label>
+                <input type="text" id="position" th:field="*{position}" required />
+
+                <button type="submit">회원 가입</button>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
 </body>
 </html>

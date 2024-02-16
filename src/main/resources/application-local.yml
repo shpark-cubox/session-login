@@ -2,6 +2,13 @@ server:
   port: 80
 
 spring:
+  thymeleaf:
+    enabled: true
+    cache: false
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+
   config:
     activate:
       on-profile: local
